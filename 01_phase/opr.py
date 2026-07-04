@@ -6,7 +6,10 @@ if(age > 18 and salary > 40000):
 
 
 # for i in range(0 , 10 ,2):
-    # print(i)
+#     print(i)
+
+# for i in range(2 , 5):
+#     print(i)
 
 
 # for i in range(10, 0 , -1):
@@ -73,3 +76,41 @@ user["city"] = "Blr"
 
 
 # function
+
+# function to add two numbers
+
+def add(a,b):
+    return a+b
+
+res = add(5, 10)
+# print(res)
+
+# default parameters 
+
+def greet(name = "Guest"):
+    print("Hello "+ name)
+
+# greet() #default  parameters will be used 
+# greet("Hsr")
+
+# keyword arguments
+
+def user(name , age):
+    print(name, age)
+
+user(age=22, name="Hsr") # keyword arguments Order doesn't matter when using keyword arguments.
+
+# Returning Multiple Values
+
+# Python can return multiple values as a tuple.
+
+def calculate(a ,b):
+    return a+b, a-b, a*b, a/b
+
+sum_val,  diff_val, prod_val, div_val = calculate(10, 5)
+# print(sum_val, diff_val, prod_val, div_val)
+print("Sum:", sum_val)
+print("Difference:", diff_val)
+print("Product:", prod_val)
+print("Division:", div_val)
+
