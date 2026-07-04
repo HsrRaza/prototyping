@@ -87,18 +87,18 @@ res = add(5, 10)
 
 # default parameters 
 
-def greet(name = "Guest"):
-    print("Hello "+ name)
+# def greet(name = "Guest"):
+#     print("Hello "+ name)
 
 # greet() #default  parameters will be used 
 # greet("Hsr")
 
 # keyword arguments
 
-def user(name , age):
-    print(name, age)
+# def user(name , age):
+#     print(name, age)
 
-user(age=22, name="Hsr") # keyword arguments Order doesn't matter when using keyword arguments.
+# user(age=22, name="Hsr") # keyword arguments Order doesn't matter when using keyword arguments.
 
 # Returning Multiple Values
 
@@ -109,8 +109,22 @@ def calculate(a ,b):
 
 sum_val,  diff_val, prod_val, div_val = calculate(10, 5)
 # print(sum_val, diff_val, prod_val, div_val)
-print("Sum:", sum_val)
-print("Difference:", diff_val)
-print("Product:", prod_val)
-print("Division:", div_val)
+# print("Sum:", sum_val)
+# print("Difference:", diff_val)
+# print("Product:", prod_val)
+# print("Division:", div_val)
 
+
+
+# zip() 
+
+name = ["Hsrss"  , "Hassan" ]
+age = [222,33]
+
+for n ,a  in zip(name, age):
+    print(n,a)
+
+
+# print(dir(list))
+
+# help(str)
