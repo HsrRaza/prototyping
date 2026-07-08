@@ -34,7 +34,7 @@ def load_entries():
 
 def save_entries(entries):
     try:
-        os.mkdirs(os.path.dirname(FILE),exist_ok =True)
+        os.makedirs(os.path.dirname(FILE),exist_ok =True)
 
         with open(FILE, 'w') as f:
             json.dump(entries , f, indent=4)
