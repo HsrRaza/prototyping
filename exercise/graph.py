@@ -1,10 +1,13 @@
+from collections import deque
+
+
 class Graph:
     def __init__(self):
         self.graph = {}
 
     def add_vertex(self ,vertex):
 
-        if vertex is not self.graph:
+        if vertex not in self.graph:
             self.graph[vertex] = set()   
 
     def add_edge(self, v1 ,v2):
@@ -36,6 +39,58 @@ class Graph:
             self.graph[v2].remove(v1)
 
 
+            # graph travsersal using dfs
+
+    def dfs(self, vertex , visited):
+        visited.add(vertex)
+        print(vertex)
+
+        for neighbour in self.graph[vertex]:
+            if neighbour not in visited:
+                self.dfs(neighbour ,visited)
+
+
+    #  dfs using traverse def
+
+    def dfss(self, vertex):
+        visited = set()
+
+        def traverse(vertex):
+
+            visited.add(vertex)
+            print(vertex)
+
+            for neighbour in self.graph[vertex]:
+
+                if neighbour not in visited:
+                    traverse(neighbour)
+            
+        traverse(vertex)
+
+    
+    def bfs(self):
+        visited =set()
+        queue =deque()
+        ans =[]
+
+        visited.add("A")
+        queue.append("A")
+
+        while queue:
+            node  =queue.popleft()
+            ans.append(node)
+
+
+            for neighbour in self.graph[node]:
+                if neighbour not in visited:
+                    visited.add(neighbour)
+                    queue.append(neighbour)
+        return ans
+
+
+
+
+
 
 g = Graph()
 
@@ -47,10 +102,26 @@ g.add_vertex("D")
 
 g.add_edge("A", "B")
 g.add_edge("A","C")
-g.add_edge("B","D")
-g.add_edge("C","D")
+g.add_edge("B" , "D")
 
 
-g.remove("A","B")
 
 g.display()
+
+# visited = set()
+
+# g.dfs("A" ,visited)
+
+g.dfss("A")
+
+adj = [
+    [1,2],
+    [0,3,4],
+    [0,5,6],
+    [1],
+    [1],
+    [2],
+    [2]
+]
+
+print(g.bfs())
