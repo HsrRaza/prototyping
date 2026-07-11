@@ -66,7 +66,7 @@ class Graph:
                     traverse(neighbour)
             
         traverse(vertex)
-
+#  bfs traversal
     
     def bfs(self):
         visited =set()
@@ -86,6 +86,38 @@ class Graph:
                     visited.add(neighbour)
                     queue.append(neighbour)
         return ans
+    
+    # graph cyle check
+    
+
+    def has_cycle(self):
+
+        visited = set()
+
+        for vertex in self.graph:
+            if vertex not in visited:
+                if self.dfs(vertex, visited, None):
+                    return True
+
+        return False
+
+
+    def dfs(self, node, visited, parent):
+
+        visited.add(node)
+
+        for neighbour in self.graph[node]:
+
+            if neighbour not in visited:
+
+                if self.dfs(neighbour, visited, node):
+                    return True
+
+            elif neighbour != parent:
+                return True
+
+        return False
+
 
 
 
