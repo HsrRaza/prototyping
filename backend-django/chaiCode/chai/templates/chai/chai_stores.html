@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+test content  for forms
+
+<form class="text-white" method = 'POST'>
+
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button type="submit">search store</button>
+
+</form>
+
+
+{% endblock %}
