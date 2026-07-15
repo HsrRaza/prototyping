@@ -19,6 +19,7 @@ class LinkedList:
         while current.next is not None:
             current =current.next
         current.next = new_node
+        
     
     # display all  nodes
     def display(self):
