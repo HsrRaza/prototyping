@@ -31,6 +31,18 @@ for file in files:
     folder_name = folders.get(ext, "Others")
     destination = os.path.join(folder , folder_name)
 
+    if not os.path.exists(destination):
+        os.mkdir(destination)
+    print(f"Moving {file} -> {folder_name}")
+
+    source = path
+
+    destination_path = os.path.join(destination ,file)
+
+
+    shutil.move(source ,destination_path)
+
+   
 
 
 
@@ -38,17 +50,4 @@ for file in files:
 
 
 
-if not os.path.exists(destination):
-    os.mkdir(destination)
 
-
-# print(name)
-# print(extension)
-
-
-
-extension = ".pdf"
-# print(folders[extension])
-
-
-# lets create a folder
