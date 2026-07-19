@@ -33,6 +33,13 @@ app.delete("/banner", async (req, res) => {
     
 })
 
+app.get("banner/exits", async (req, res) => {
+
+    const exits  = await redis.exists(BANNER_KEY)
+    res.json({exists:Boolean(exits)})
+    
+})
+
 
 app.listen(3000 , ()=>{
     console.log(`Server is running `);

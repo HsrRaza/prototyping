@@ -1,3 +1,4 @@
 backend-django/.venv/
 django
 .venv
+node_modules
