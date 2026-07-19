@@ -1,5 +1,4 @@
 import express from "express"
-import mongoose from "mongoose"
 import Redis from "ioredis"
 
 const app =express();
@@ -33,7 +32,7 @@ app.delete("/banner", async (req, res) => {
     
 })
 
-app.get("banner/exits", async (req, res) => {
+app.get("/banner/exists", async (req, res) => {
 
     const exits  = await redis.exists(BANNER_KEY)
     res.json({exists:Boolean(exits)})
