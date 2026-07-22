@@ -49,7 +49,14 @@ app.post("/otp/verify", async (req, res) => {
 
 })
 
+app.get('/otp/:phone/ttl', async (req, res) => {
 
-
-
-
+    const ttl = await redis.ttl(otpKey(req.params.phone))
+    res.json({ttl})
+    
+})
+app.listen(3000, ()=>{
+    console.log(`server is running`);
+    
+})
+    
